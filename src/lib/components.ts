@@ -10,7 +10,7 @@ export const components: Component[] = [
         id: 1,
         name: 'view',
         image: './view.svg',
-        template: '<div u-component >this is view</div>'
+        template: '<div u-component u-view >this is view</div>'
     },
     {
         id: 2,

@@ -4,10 +4,12 @@
 	import DropZone from "$lib/DropZone.svelte";
     import { components } from "$lib/components";
     import './style.css'
+	import Header from "$lib/Header.svelte";
 
 </script>
 
 
+<Header />
 <div class="home">
     <Sidebar>
         {#each components as {name, image, template}}
