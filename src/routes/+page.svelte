@@ -1,6 +1,6 @@
 <script>
 	import DragWrapper from "$lib/DragWrapper.svelte";
-    import DragZone from "$lib/DragZone.svelte";
+    import DragZone from "../lib/DragZone.svelte";
 	import DropZone from "$lib/DropZone.svelte";
     import { components } from "$lib/components";
     import './style.css'

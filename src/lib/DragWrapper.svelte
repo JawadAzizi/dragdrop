@@ -5,12 +5,12 @@
 
 	function dragHandler(e: DragEvent): void {
 		console.log('drag started');
-		const thumbImage = new Image(100, 100);
-		thumbImage.src = image;
-		thumbImage.style.background = 'rgba(34,34,34, 1)';
-		thumbImage.style.border = '1px solid red';
-		thumbImage.style.borderRadius = '5px';
-		e.dataTransfer?.setDragImage(thumbImage, 20, 20);
+		// const thumbImage = new Image(100, 100);
+		// thumbImage.src = image;
+		// thumbImage.style.background = 'rgba(34,34,34, 1)';
+		// thumbImage.style.border = '1px solid red';
+		// thumbImage.style.borderRadius = '5px';
+		// e.dataTransfer?.setDragImage(thumbImage, 20, 20);
 
 		e.dataTransfer.effectAllowed = 'copy';
 
