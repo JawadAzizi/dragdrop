@@ -1,11 +1,11 @@
 <script lang="ts">
-	function dragEnterHandler(e: MouseEvent): void {
+	function dragEnterHandler(e: DragEvent): void {
 		console.log('dragEntered');
 		e.preventDefault();
+		console.log(e)
 		e.dataTransfer.dragEffect = 'copy'
-
 	}
-	function dropHandler(e: MouseEvent): void {
+	function dropHandler(e: DragEvent): void {
 		console.log('drop fired');
 		console.log(e.target)
 		e.preventDefault();

@@ -1,18 +1,17 @@
 <script lang="ts">
-
 	export let name: string;
 	export let image: string;
-	export let template: string
+	export let template: string;
 
 	function dragHandler(e: DragEvent): void {
 		console.log('drag started');
-		const thumbImage = new Image(100, 100)
-		thumbImage.src = image
-		thumbImage.style.background = 'rgba(34,34,34, 1)'
-		thumbImage.style.border = '1px solid red'
-		thumbImage.style.borderRadius  = '5px'
-		e.dataTransfer?.setDragImage(thumbImage, 20, 20)
-		
+		const thumbImage = new Image(100, 100);
+		thumbImage.src = image;
+		thumbImage.style.background = 'rgba(34,34,34, 1)';
+		thumbImage.style.border = '1px solid red';
+		thumbImage.style.borderRadius = '5px';
+		e.dataTransfer?.setDragImage(thumbImage, 20, 20);
+
 		e.dataTransfer.effectAllowed = 'copy';
 
 		e.dataTransfer.setData('text/html', template);
@@ -25,8 +24,8 @@
 	on:dragstart={dragHandler}
 	role="region"
 >
-    <div class="name">{name}</div>
-	<img class = 'thumb' src = {image} alt = {name} />
+	<div class="name">{name}</div>
+	<img class="thumb" src={image} alt={name} />
 </div>
 
 <style>
@@ -39,12 +38,12 @@
 		flex-direction: column;
 		align-items: center;
 	}
-	.thumb{
+	.thumb {
 		width: 40px;
 		height: 40px;
 		border-radius: 5px;
 	}
-	.name{
+	.name {
 		text-align: center;
 		color: white;
 		/* position: absolute;
