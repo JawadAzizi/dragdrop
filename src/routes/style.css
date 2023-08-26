@@ -1,0 +1,10 @@
+@import "https://unpkg.com/@ulibs/ui@next/dist/styles.css";
+
+[u-component]{
+    box-shadow: 0px 0px 0px 1px rgba(9, 45, 164, 0.645);
+    min-height: 40px;
+    margin: 3px;
+}
+[u-component]:hover{
+   box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 0.645);
+}
