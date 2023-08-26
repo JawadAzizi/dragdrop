@@ -1,25 +1,18 @@
 <script>
 	import DragWrapper from "$lib/DragWrapper.svelte";
-    import DragZone from "$lib/dragZone.svelte";
+    import DragZone from "$lib/DragZone.svelte";
 	import DropZone from "$lib/DropZone.svelte";
+    import { components } from "$lib/components";
+    import './style.css'
 
 </script>
 
 
 <div class="home">
     <DragZone>
-        <DragWrapper>
-            item 1
-        </DragWrapper>
-        <DragWrapper>
-            item 2
-        </DragWrapper>
-        <DragWrapper>
-            item 3
-        </DragWrapper>
-        <DragWrapper>
-            item 4
-        </DragWrapper>
+        {#each components as {name, image, template}}
+           <DragWrapper {name} {image} {template}></DragWrapper> 
+        {/each}
     </DragZone>
     <DropZone>
 
@@ -34,4 +27,5 @@
         grid-template-rows: 1fr;
         gap: 5px;
     }
+    
 </style>

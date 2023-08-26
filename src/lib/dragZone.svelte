@@ -1,5 +1,10 @@
+<script lang="ts">
+</script>
+
+
 <div class="drag-zone">
     <slot></slot>
+
 </div>
 
 <style>
@@ -17,6 +22,7 @@
     	
 	:global(.drag-zone .drag-wrapper:hover){
         transform: scale(1.01, 1.1);
+        cursor: move;
     }
     
 </style>

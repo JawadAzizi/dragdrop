@@ -2,17 +2,14 @@
 	function dragEnterHandler(e: MouseEvent): void {
 		console.log('dragEntered');
 		e.preventDefault();
-		
+		e.dataTransfer.dragEffect = 'copy'
+
 	}
 	function dropHandler(e: MouseEvent): void {
 		console.log('drop fired');
+		console.log(e.target)
 		e.preventDefault();
-		console.log(e.dataTransfer.getData('text/html'))
 		const content =  e.target.innerHTML + e.dataTransfer.getData('text/html')
-		console.log(content)
-
-	 
-
 		e.target.innerHTML =  content
 	}
 	function dragLeaveHandler(e: MouseEvent): void {
@@ -22,7 +19,7 @@
 	function dragOverhandler(e: MouseEvent): void {
 		console.log('dragOver');
 		e.preventDefault();
-		e.dataTransfer.dropEffect = 'copy'
+		
 	}
 </script>
 

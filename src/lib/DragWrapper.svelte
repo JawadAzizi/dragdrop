@@ -1,12 +1,21 @@
 <script lang="ts">
-	import type { DragEventHandler } from 'svelte/elements';
+
+	export let name: string;
+	export let image: string;
+	export let template: string
 
 	function dragHandler(e: DragEvent): void {
 		console.log('drag started');
-		e.dataTransfer.dropEffect = 'copy';
+		const thumbImage = new Image(100, 100)
+		thumbImage.src = image
+		thumbImage.style.background = 'rgba(34,34,34, 1)'
+		thumbImage.style.border = '1px solid red'
+		thumbImage.style.borderRadius  = '5px'
+		e.dataTransfer?.setDragImage(thumbImage, 20, 20)
+		
 		e.dataTransfer.effectAllowed = 'copy';
-        console.log(e.target.outerHTML)
-		e.dataTransfer.setData('text/html', e.target.outerHTML);
+
+		e.dataTransfer.setData('text/html', template);
 	}
 </script>
 
@@ -16,13 +25,30 @@
 	on:dragstart={dragHandler}
 	role="region"
 >
-	<slot />
+    <div class="name">{name}</div>
+	<img class = 'thumb' src = {image} alt = {name} />
 </div>
 
 <style>
 	.drag-wrapper {
+		position: relative;
 		background-color: rgb(131, 131, 131);
 		border-radius: 5px;
 		padding: 5px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.thumb{
+		width: 40px;
+		height: 40px;
+		border-radius: 5px;
+	}
+	.name{
+		text-align: center;
+		color: white;
+		/* position: absolute;
+		top: 0px;
+		left: 0px; */
 	}
 </style>
