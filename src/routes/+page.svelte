@@ -1,6 +1,6 @@
 <script>
 	import DragWrapper from "$lib/DragWrapper.svelte";
-    import DragZone from "../lib/DragZone.svelte";
+    import Sidebar from "../lib/Sidebar.svelte";
 	import DropZone from "$lib/DropZone.svelte";
     import { components } from "$lib/components";
     import './style.css'
@@ -9,11 +9,11 @@
 
 
 <div class="home">
-    <DragZone>
+    <Sidebar>
         {#each components as {name, image, template}}
            <DragWrapper {name} {image} {template}></DragWrapper> 
         {/each}
-    </DragZone>
+    </Sidebar>
     <DropZone>
 
     </DropZone>

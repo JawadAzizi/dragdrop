@@ -12,6 +12,7 @@
 		// thumbImage.style.borderRadius = '5px';
 		// e.dataTransfer?.setDragImage(thumbImage, 20, 20);
 
+		if(!e.dataTransfer)return
 		e.dataTransfer.effectAllowed = 'copy';
 
 		e.dataTransfer.setData('text/html', template);
