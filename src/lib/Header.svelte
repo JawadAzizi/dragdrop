@@ -10,7 +10,7 @@
         align-items: center;
         flex-direction: row;
         padding: 10px;
-        background: linear-gradient(90deg, #7a7a76, #d9d9d9 , #d9d9d9, #7a7a76);
+        background: linear-gradient(90deg, #959590, #d9d9d9 , #d9d9d9, #959590);
     }
     h3{
         justify-self: start;
